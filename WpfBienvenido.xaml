@@ -89,5 +89,6 @@
                 Content="INGRESAR"
                 Grid.Column="1"
                 Grid.Row="4"/>
+        <Button Content="holiwis"/>
     </Grid>
 </Window>
