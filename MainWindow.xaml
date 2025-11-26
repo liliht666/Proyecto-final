@@ -1,0 +1,119 @@
+﻿<Window x:Class="WpfAppProyectoFinalP2C.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppProyectoFinalP2C"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="500">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="1"
+        Grid.RowSpan="7"
+        Grid.ColumnSpan="2"
+        Opacity="1">
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#004B87" Offset="0.0"/>
+                    <GradientStop Color="#002244" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+        </Border>
+
+
+        <Image x:Name="imgLogoIPCP"
+               Grid.ColumnSpan="2"
+               HorizontalAlignment="Center"
+               Source="/Imagenes/LogoIPCP.jpg"
+            />
+        <Label x:Name="lblInicioSesion"
+               Grid.Row="1"
+               Grid.ColumnSpan="2"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Content="INICIAR SESIÓN"
+               FontSize="30"
+               FontWeight="Normal"/>
+        
+        <Label x:Name="lblInicioUsuario"
+               Grid.Row="2"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               Content="USUARIO:"/>
+
+        <TextBox x:Name="txtInicioUsuario"
+                 Grid.Row="2"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+        <Label x:Name="lblInicioContraseña"
+          Grid.Row="3"
+          HorizontalAlignment="Right"
+          VerticalAlignment="Center"
+          Content="CONTRASEÑA:"/>
+
+        <PasswordBox x:Name="PwbInicioContraseña"
+                 Grid.Row="3"
+                 Grid.Column="1"
+                     Height="30"
+                     Margin="10"
+                 VerticalAlignment="Center"/>
+
+        <Label x:Name="lblInicioAdvertencia"
+               Grid.Row="4"
+               FontSize="15"
+               Grid.ColumnSpan="2"
+               HorizontalAlignment="Center"/>
+
+        <Button x:Name="btnInicioIngresar"
+                Grid.Row="5"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Center"
+                Width="200"
+                Content="INGRESAR" Click="btnInicioIngresar_Click"/>
+
+        <Label x:Name="lblMensajeUno"
+               Grid.Row="6"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+                FontSize="10"
+               Content="¿ES UN PARTICIPANTE?"/>
+
+        <Button x:Name="btnInicioRegristrarMiembro"
+                Grid.Row="6"
+                Grid.Column="2"
+                FontSize="10"
+                Height="20"
+                Content="REGISTRARSE" Click="btnInicioRegristrarMiembro_Click"/>
+
+        <Label x:Name="lblMensajeDos"
+         Grid.Row="7"
+         HorizontalAlignment="Right"
+         VerticalAlignment="Center"
+         FontSize="10"
+         Content="¿ES MIEMBRO DEL STAFF?"/>
+
+        <Button x:Name="btnRegistrarStaff"
+          Grid.Row="7"
+          Grid.Column="2"
+                 Height="20"
+          Content="REGISTRAR STAFF"
+          FontSize="10" Click="btnRegistrarStaff_Click"/>
+    </Grid>
+</Window>

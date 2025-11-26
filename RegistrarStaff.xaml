@@ -1,0 +1,132 @@
+﻿<Window x:Class="WpfAppProyectoFinalP2C.RegistrarStaff"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppProyectoFinalP2C"
+        mc:Ignorable="d"
+        Title="RegistrarStaff" Height="600" Width="500">
+    <Grid Grid.Column="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="1"
+             Grid.RowSpan="9"
+             Grid.ColumnSpan="2"
+             Opacity="1">
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+
+                    <GradientStop Color="#002040" Offset="0.0"/>
+
+                    <GradientStop Color="#004B87" Offset="1.0"/>
+
+                </LinearGradientBrush>
+            </Border.Background>
+
+        </Border>
+
+        <Image x:Name="imgLogoIPCP"
+      Grid.ColumnSpan="2"
+      HorizontalAlignment="Center"
+      Source="/Imagenes/LogoIPCP.jpg"/>
+
+        <Label x:Name="lblRegistroStaff"
+          Grid.Row="1"
+          Grid.ColumnSpan="2"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          FontSize="25"
+          FontWeight="Black"
+          Content="REGISTRO STAFF:"/>
+
+        <Label x:Name="lblRStaffNombre"
+     Grid.Row="2"
+     HorizontalAlignment="Right"
+     VerticalAlignment="Center"
+     Content="Nombre(s):"/>
+
+        <TextBox x:Name="txtRStaffNombre"
+      Grid.Row="2"
+      Grid.Column="1"
+      VerticalAlignment="Center"/>
+
+        <Label x:Name="lblRStaffApellido"
+          Grid.Row="3"
+          HorizontalAlignment="Right"
+          VerticalAlignment="Center"
+          Content="Apellidos(s):"/>
+
+        <TextBox x:Name="txtRStaffApellido"
+            Grid.Row="3"
+            Grid.Column="1"
+            VerticalAlignment="Center"/>
+
+        <Label x:Name="lblRStaffCelular"
+          Grid.Row="4"
+          HorizontalAlignment="Right"
+          VerticalAlignment="Center"
+          Content="Celular:"/>
+
+        <TextBox x:Name="txtRStaffCelular"
+            Grid.Row="4"
+            Grid.Column="1"
+            VerticalAlignment="Center"/>
+
+        <Label x:Name="lblRStaffFechaNac"
+          Grid.Row="5"
+          HorizontalAlignment="Right"
+          VerticalAlignment="Center"
+          Content="Fecha de Nacimiento:"/>
+
+        <TextBox x:Name="txtRStaffFechaNac"
+            Grid.Row="5"
+            Grid.Column="1"
+            VerticalAlignment="Center"/>
+
+        <Label x:Name="lblRStaffCiudad"
+          Grid.Row="6"
+          HorizontalAlignment="Right"
+          VerticalAlignment="Center"
+          Content="Ciudad"/>
+
+        <TextBox x:Name="txtRStaffCiudad"
+            Grid.Row="6"
+            Grid.Column="1"
+            VerticalAlignment="Center"/>
+
+        <Label x:Name="lblRPAdvertencia"
+             Grid.Row="7"
+             Grid.ColumnSpan="2"
+             HorizontalAlignment="Center"
+             FontSize="10"
+             Visibility="Hidden"
+             Content="ERROR"/>
+
+        <Button x:Name="btnRegistrarStaff"
+             Grid.Row="8"
+             Width="200"
+             Content="REGISTRARSE" Click="btnRegistrarStaff_Click"/>
+        <Button x:Name="btnVolverLogIn"
+               Grid.Row="8"
+               Grid.Column="1"
+               Width="200"
+               Content="VOLVER" Click="btnVolverLogIn_Click"/>
+    </Grid>
+
+</Window>

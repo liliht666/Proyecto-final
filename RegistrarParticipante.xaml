@@ -1,0 +1,288 @@
+﻿<Window x:Class="WpfAppProyectoFinalP2C.RegistrarParticipante"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppProyectoFinalP2C"
+        mc:Ignorable="d"
+        Title="RegistrarParticipante" Height="600" Width="500">
+    <!--El width normalmente es 500, pero se aumenta a 1000 para el panel de registro de equipo-->
+
+    <Grid ClipToBounds="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <Border Grid.Row="1"
+                    Grid.RowSpan="11"
+                    Grid.ColumnSpan="2"
+                    Opacity="1">
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+
+                        <GradientStop Color="#004B87" Offset="0.0"/>
+
+                        <GradientStop Color="#002040" Offset="1.0"/>
+
+                    </LinearGradientBrush>
+                </Border.Background>
+
+            </Border>
+
+            <Image x:Name="imgLogoIPCP"
+             Grid.ColumnSpan="2"
+             HorizontalAlignment="Center"
+             Source="/Imagenes/LogoIPCP.jpg"/>
+
+            <Label x:Name="lblRegistro"
+                 Grid.Row="1"
+                 Grid.ColumnSpan="2"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 FontSize="25"
+                 FontWeight="Black"
+                 Content="REGISTRO PARTICIPANTE:"/>
+
+            <Label x:Name="lblRPNombre"
+            Grid.Row="2"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="Nombre(s):"/>
+
+            <TextBox x:Name="txtRPNombre"
+             Grid.Row="2"
+             Grid.Column="1"
+             VerticalAlignment="Center"/>
+
+            <Label x:Name="lblRPApellido"
+                 Grid.Row="3"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Center"
+                 Content="Apellidos(s):"/>
+
+            <TextBox x:Name="txtRPApellido"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"/>
+
+            <Label x:Name="lblRPMatricula"
+                 Grid.Row="4"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Center"
+                 Content="Matrícula o ID:"/>
+
+            <TextBox x:Name="txtRPMatricula"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"/>
+
+            <Label x:Name="lblRPFechaNac"
+                 Grid.Row="5"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Center"
+                 Content="Fecha de Nacimiento:"/>
+
+            <TextBox x:Name="txtRPFechaNac"
+                   Grid.Row="5"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"/>
+
+            <Label x:Name="lblRPCurso"
+         Grid.Row="6"
+         HorizontalAlignment="Right"
+         VerticalAlignment="Center"
+         Content="Curso o grado:"/>
+
+            <TextBox x:Name="txtRPCurso"
+           Grid.Row="6"
+           Grid.Column="1"
+           VerticalAlignment="Center"/>
+
+            <Label x:Name="lblRPCelular"
+                  Grid.Row="7"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Center"
+                  Content="Celular:"/>
+
+            <TextBox x:Name="txtRPCelular"
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    VerticalAlignment="Center"/>
+
+            <Label x:Name="lblRPCodigo"
+                 Grid.Row="8"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Center"
+                 Content="Código de equipo"/>
+
+            <TextBox x:Name="txtRPCodigo"
+                     Grid.Row="8"
+                     Grid.Column="1"
+                     MaxLength="9"
+                     CharacterCasing="Upper"
+                     VerticalAlignment="Center"/>
+
+            <Label x:Name="lblRPAdvertencia"
+                    Grid.Row="9"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    FontSize="10"
+                    Visibility="Hidden"
+                    Content="ERROR"/>
+
+            <Button x:Name="btnRegistrarParticipante"
+                    Grid.Row="10"
+                    Grid.Column="1"
+                    Width="200"
+                    Content="REGISTRARSE" Click="btnRegistrarParticipante_Click"/>
+
+            <Button x:Name="btnVolver"
+                     Grid.Row="10"
+                     Width="200"
+                     Content="Volver" Click="btnVolver_Click"/>
+            
+            <Label x:Name="lblMensajeRegistrarEquipo"
+            Grid.Row="11"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+             FontSize="10"
+            Content="¿Aún no registro su equipo?"/>
+
+            <Button x:Name="btnIrARegistrarEquipo"
+             Grid.Row="11"
+             Grid.Column="2"
+             FontSize="10"
+                Height="20"
+             Content="REGISTRAR EQUIPO" Click="btnIrARegistrarEquipo_Click"
+                    />
+        </Grid>
+
+        <!--el width normalmente es 0, pero se aumenta a 500 para el panel de registro de equipo-->
+
+        <Grid x:Name="GridRegistroEquipo" Grid.Column="1" Width="0" ClipToBounds="True">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="1"
+                    Grid.RowSpan="11"
+                    Grid.ColumnSpan="2">    
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+
+                        <GradientStop Color="#004B87" Offset="0.0"/>
+
+                        <GradientStop Color="#002244" Offset="1.0"/>
+
+                    </LinearGradientBrush>
+                </Border.Background>
+
+            </Border>
+
+            <Label x:Name="lblRegistrarEquipo"
+                     Grid.Row="1"
+                     Content="REGISTRAR EQUIPO:"
+                    Grid.ColumnSpan="2"
+                    FontSize="25"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+
+            <Label x:Name="lblNombreEquipo"
+                     Grid.Row="2"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Center"
+                     Content="Nombre del equipo:"/>
+
+            <TextBox x:Name="txtNombreEquipo"
+                     Grid.Row="2"
+                     Grid.Column="1"
+                     VerticalAlignment="Center"/>
+
+            <Label x:Name="lblInstitucion"
+                      Grid.Row="3"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Content="Institución:"/>
+
+            <TextBox x:Name="txtInstitución"
+                      Grid.Row="3"
+                      Grid.Column="1"
+                      VerticalAlignment="Center"/>
+
+            <Label x:Name="lblTipoIns"
+                      Grid.Row="4"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Content="Colegio/Universidad:"/>
+
+            <TextBox x:Name="txtTipoIns"
+                      Grid.Row="4"
+                      Grid.Column="1"
+                      VerticalAlignment="Center"/>
+
+            <Label x:Name="lblEquipoAdvertencia"
+                   Grid.Row="9"
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Center"
+                   FontSize="10"
+                   Visibility="Hidden"
+                   Content="ERROR"/>
+
+            <Button x:Name="btnRegistrarEquipo"
+                    Content="CREAR EQUIPO Y REGISTRARME"
+                    Grid.Row="10"
+                    Grid.ColumnSpan="2" Click="btnRegistrarEquipo_Click"/>
+
+            <Label x:Name="lblMensajeYaTieneUnEquipo"
+                   Content="¿Ya tiene un equipo?"
+                   FontSize="10"
+                   Grid.Row="11"
+                   HorizontalAlignment="Right"/>
+            <Button x:Name="btnVolverRegistroPersonal"
+                    Grid.Row="11"
+                    Grid.Column="2"
+                    FontSize="10"
+                    Content="VOLVER A REGISTRO PERSONAL" Click="btnVolverRegistroPersonal_Click"
+           />
+        </Grid>
+    </Grid>
+</Window>

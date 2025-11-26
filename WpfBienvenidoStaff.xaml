@@ -1,0 +1,79 @@
+﻿<Window x:Class="WpfAppProyectoFinalP2C.WpfBienvenidoStaff"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppProyectoFinalP2C"
+        mc:Ignorable="d"
+                Title="WpfBienvenido" Height="450" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0"
+        Grid.ColumnSpan="2"
+        Opacity="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#004B87" Offset="0.0"/>
+                    <GradientStop Color="#002244" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <Border Grid.Row="2"
+        Grid.ColumnSpan="2"
+        Grid.RowSpan="3"
+        Opacity="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#002244" Offset="0.0"/>
+                    <GradientStop Color="#004B87" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <Label x:Name="lblBienvenidoStaff"
+               Content="Bienvenido:"
+               HorizontalAlignment="Right"/>
+
+        <Label x:Name="lblNombreStaff"
+               Grid.Row="0"
+               Grid.Column="1"
+               Content="PARTICIPANTE"/>
+
+        <Image x:Name="imgLogoBienvenidoStaff"
+               Source="/Imagenes/LogoIPCP.jpg"
+               Grid.ColumnSpan="2"
+               Grid.Row="1"/>
+
+        <Label x:Name="lblRolStaff"
+               Content="Rol:"
+               Grid.Row="2"
+               HorizontalAlignment="Right"/>
+
+        <Label x:Name="lblRol"
+               Content="ADMINISTRADOR"
+               Grid.Row="2"
+               Grid.Column="1"
+               HorizontalAlignment="Center"/>
+        
+        <Button x:Name="btnVolver"
+                Content="VOLVER"
+                Grid.Row="3" Click="btnVolver_Click"/>
+
+        <Button x:Name="btnIngresar"
+                Content="INGRESAR"
+                Grid.Column="1"
+                Grid.Row="3"/>
+    </Grid>
+</Window>
+
