@@ -87,6 +87,9 @@
                 HorizontalAlignment="Center"
                 Width="200"
                 Content="INGRESAR" Click="btnInicioIngresar_Click"/>
+        <Button x:Name="btnGustavo"
+                Content="Agregar gustavo"
+                Grid.Row="5"/>
 
         <Label x:Name="lblMensajeUno"
                Grid.Row="6"
